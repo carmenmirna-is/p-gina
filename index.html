@@ -3,66 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Promoción CIS 1-2025 - Eventos y actividades para estudiantes de la carrera de Ingeniería de Sistemas">
     <title>Promoción CIS 1-2025</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80' font-family='Arial' font-weight='bold' fill='%232c3e50'>CIS</text></svg>">
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    
+    <!-- AOS CSS para animaciones al hacer scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">CIS 1-2025</a>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#footer">Contacto</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
     <!-- Header -->
     <header class="hero">
         <div class="container">
             <h1>PROMOCIÓN CIS 1-2025</h1>
-            <p>Descubre los eventos y actividades de nuestra promoción.</p>
-            <a href="#eventos" class="btn">Ver Eventos</a>
+            <p>Descubre los eventos y actividades de nuestra promoción. Únete a nuestra comunidad de Ingeniería de Sistemas.</p>
+            <a href="#eventos" class="btn">Ver Eventos <i class="fas fa-arrow-right"></i></a>
         </div>
     </header>
 
     <!-- Sección de Eventos Destacados -->
     <section id="eventos" class="eventos-destacados">
         <div class="container">
-            <h2>Próximos Eventos</h2>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Próximos Eventos</h2>
+                <p>No te pierdas las actividades organizadas por nuestra promoción</p>
+            </div>
             <div class="eventos-grid">
-                <div class="evento-card">
-                    <img src="Campeonato.jpeg" alt="Campeonato de Fútsal">
-                    <h3>Campeonato de Fútsal</h3>
-                    <p><strong>Fecha:</strong> 24 De Marzo, 2025</p>
-                    <p><strong>Lugar:</strong> Polideportivo del Campus Hernán Melgar Justiniano</p>
-                    <p>¡No te quedes fuera y participa!</p>
+                <div class="evento-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-container">
+                        <span class="fecha">24 MAR</span>
+                        <img src="Campeonato.jpeg" alt="Campeonato de Fútsal">
+                    </div>
+                    <div class="evento-content">
+                        <h3>Campeonato de Fútsal</h3>
+                        <div class="info">
+                            <p><i class="fas fa-calendar-alt"></i> 24 de Marzo, 2025</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Polideportivo del Campus Hernán Melgar Justiniano</p>
+                            <p><i class="fas fa-info-circle"></i> ¡No te quedes fuera y participa!</p>
+                        </div>
+                        <a href="#" class="evento-btn">Más información</a>
+                    </div>
                 </div>
-                <div class="evento-card">
-                    <img src="Bautizo.jpeg" alt="Bautizo">
-                    <h3>Bautizo</h3>
-                    <p><strong>Fecha:</strong> 28 De Marzo, 2025</p>
-                    <p><strong>Lugar:</strong> Ex-Zoológico</p>
-                    <p>Ven y Comparte con los nuevos estudiantes de la Carrera</p>
+                
+                <div class="evento-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-container">
+                        <span class="fecha">28 MAR</span>
+                        <img src="Bautizo.jpeg" alt="Bautizo">
+                    </div>
+                    <div class="evento-content">
+                        <h3>Bautizo</h3>
+                        <div class="info">
+                            <p><i class="fas fa-calendar-alt"></i> 28 de Marzo, 2025</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Ex-Zoológico</p>
+                            <p><i class="fas fa-info-circle"></i> Ven y comparte con los nuevos estudiantes de la Carrera</p>
+                        </div>
+                        <a href="#" class="evento-btn">Más información</a>
+                    </div>
+                </div>
+                
+                <div class="evento-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="img-container">
+                        <span class="fecha">15 ABR</span>
+                        <img src="promo.png" alt="Aniversario de la Promoción">
+                    </div>
+                    <div class="evento-content">
+                        <h3>Aniversario de la Promoción</h3>
+                        <div class="info">
+                            <p><i class="fas fa-calendar-alt"></i> 15 de Abril, 2025</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Auditorio Central</p>
+                            <p><i class="fas fa-info-circle"></i> Celebremos juntos nuestro primer año como promoción</p>
+                        </div>
+                        <a href="#" class="evento-btn">Más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contador -->
+    <section class="contador-section">
+        <div class="container">
+            <div class="contador-grid">
+                <div class="contador-item" data-aos="fade-up">
+                    <i class="fas fa-users"></i>
+                    <h3 class="contador" data-target="120">0</h3>
+                    <p>Estudiantes</p>
+                </div>
+                <div class="contador-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3 class="contador" data-target="15">0</h3>
+                    <p>Eventos Realizados</p>
+                </div>
+                <div class="contador-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-trophy"></i>
+                    <h3 class="contador" data-target="8">0</h3>
+                    <p>Premios Ganados</p>
+                </div>
+                <div class="contador-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3 class="contador" data-target="25">0</h3>
+                    <p>Proyectos</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Galería de Eventos -->
-    <section class="galeria">
+    <section id="galeria" class="galeria">
         <div class="container">
-            <h2>Galería de Eventos</h2>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Galería de Eventos</h2>
+                <p>Recuerdos de nuestras actividades y momentos especiales</p>
+            </div>
             <div class="galeria-grid">
-                <img src="Campeonato.jpeg" alt="Campeonato">
-                <img src="Bautizo.jpeg" alt="Bautizo">
-                <img src="promo.png" alt="Promoción 2025">
+                <div class="galeria-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="Campeonato.jpeg" alt="Campeonato">
+                    <div class="galeria-overlay">
+                        <h3>Campeonato de Fútsal 2025</h3>
+                    </div>
+                </div>
+                <div class="galeria-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="Bautizo.jpeg" alt="Bautizo">
+                    <div class="galeria-overlay">
+                        <h3>Bautizo Promoción CIS</h3>
+                    </div>
+                </div>
+                <div class="galeria-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="promo.png" alt="Promoción 2025">
+                    <div class="galeria-overlay">
+                        <h3>Eventos Promoción 2025</h3>
+                    </div>
+                </div>
+                <!-- Puedes añadir más imágenes a la galería si las tienes -->
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="footer">
         <div class="container">
-            <p>&copy; 2025 Promoción CIS 1-2025. Todos los derechos reservados.</p>
-            <div class="redes-sociales">
-                <a href="https://www.facebook.com/share/15zeWEhuaG/"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/promo2025cis/"><i class="fab fa-instagram"></i></a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre Nosotros</h3>
+                    <p>La Promoción CIS 1-2025 está formada por estudiantes de Ingeniería de Sistemas comprometidos con la excelencia académica y el desarrollo profesional.</p>
+                    <div class="redes-sociales">
+                        <a href="https://www.facebook.com/share/15zeWEhuaG/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/promo2025cis/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#eventos">Eventos</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#">Miembros</a></li>
+                        <li><a href="#">Noticias</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <div class="contacto-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Promoción CIS 1-2025</p>
+                        <p><i class="fas fa-phone"></i> +591 63521729</p>
+                        <p><i class="fas fa-envelope"></i> promo2025cis@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Promoción CIS 1-2025. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript para animaciones y funcionalidades -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
