@@ -1,10 +1,10 @@
 /* Variables globales */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
-    --accent-color: #e74c3c;
-    --text-color: #333;
-    --light-gray: #f5f5f5;
+    --primary-color: #76B3C9;     /* Medium blue from palette */
+    --secondary-color: #008080;   /* Deeper teal from palette */
+    --accent-color: #00505C;      /* Darkest teal from palette */
+    --text-color: #333;           /* Kept the original dark gray */
+    --light-gray: #F4F1ED;        /* Light neutral tone from palette */
     --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease-in-out;
 }
@@ -104,7 +104,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #c0392b;
+    background-color: var(--secondary-color);
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
 }
@@ -129,7 +129,7 @@ body {
 
 /* Navbar flotante */
 .navbar {
-    background-color: white;
+    background-color: var(--light-gray);
     box-shadow: var(--box-shadow);
     padding: 15px 0;
     position: sticky;
@@ -318,53 +318,79 @@ body {
 }
 
 /* Galería mejorada */
-.galeria {
-    padding: 100px 0;
-    background-color: white;
-}
-
+/* Galería mejorada con efecto zoom */
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px;
+    padding: 15px;
 }
 
 .galeria-item {
     position: relative;
-    overflow: hidden;
     border-radius: 12px;
     height: 250px;
     cursor: pointer;
+    overflow: visible;
+}
+
+.img-zoom-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
 }
 
 .galeria-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition);
+    transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    will-change: transform;
+    position: relative;
+    z-index: 1;
 }
 
 .galeria-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.8);
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .galeria-overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 70%);
-    opacity: 0;
-    transition: var(--transition);
-    display: flex;
-    align-items: flex-end;
     padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
     color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .galeria-item:hover .galeria-overlay {
     opacity: 1;
+}
+
+/* Asegura que el hover no afecte el layout */
+.galeria-item:hover {
+    z-index: 20;
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+    .galeria-item:hover img {
+        transform: scale(1.3);
+    }
+    
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
 }
 
 .contenido-primero,
@@ -544,4 +570,35 @@ footer {
     .footer-content {
         grid-template-columns: 1fr;
     }
+}
+/* Mejora para las imágenes de eventos */
+.evento-card .img-container {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.evento-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.evento-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Efecto de superposición para fechas */
+.evento-card .fecha {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }

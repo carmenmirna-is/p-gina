@@ -56,3 +56,39 @@ setInterval(() => {
         contenidoSegundo.style.transform = 'translateX(100%)';
     }
 }, 5000); // Cambia cada 5 segundos// Cierre del addEventListener principal
+
+// Añade esto a tu scripts.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Lightbox para galería
+    const galleryItems = document.querySelectorAll('.galeria-item');
+    
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const imgSrc = this.querySelector('img').src;
+            const imgAlt = this.querySelector('img').alt;
+            
+            // Crear lightbox
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            lightbox.innerHTML = `
+                <div class="lightbox-content">
+                    <img src="${imgSrc}" alt="${imgAlt}">
+                    <span class="close-lightbox">&times;</span>
+                </div>
+            `;
+            
+            document.body.appendChild(lightbox);
+            
+            // Cerrar lightbox
+            lightbox.querySelector('.close-lightbox').addEventListener('click', () => {
+                lightbox.remove();
+            });
+            
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.remove();
+                }
+            });
+        });
+    });
+});
